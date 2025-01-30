@@ -1,5 +1,5 @@
 from tkinter import *
-root = Tk()
+root = Tk(className="Unit converter")
 w = Label(root, text='GeeksForGeeks.org!')
 w.pack()
 root.mainloop()
