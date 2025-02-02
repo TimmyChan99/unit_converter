@@ -83,24 +83,26 @@ def convert_temperature(value, from_unit, to_unit):
     elif to_unit == 'fahrenheit':
         return round((value_in_kelvin - 273.15) * 9 / 5 + 32, 2)
 
-# Main Program
-print("Welcome to the Unit Converter!")
 
-# Step 1: Choose the conversion type
-conversion_type = get_conversion_type()
+if __name__ == '__main__':
+    # Main Program
+    print("Welcome to the Unit Converter!")
 
-# Step 2: Get user inputs
-value = get_valid_float(f"Enter the value to convert: ")
-from_unit = get_valid_unit(conversion_type, "Choose the unit to convert from")
-to_unit = get_valid_unit(conversion_type, "Choose the unit to convert to")
+    # Step 1: Choose the conversion type
+    conversion_type = get_conversion_type()
 
-# Step 3: Perform the conversion
-if conversion_type == 'length':
-    result = convert_length(value, from_unit, to_unit)
-elif conversion_type == 'weight':
-    result = convert_weight(value, from_unit, to_unit)
-elif conversion_type == 'temperature':
-    result = convert_temperature(value, from_unit, to_unit)
+    # Step 2: Get user inputs
+    value = get_valid_float(f"Enter the value to convert: ")
+    from_unit = get_valid_unit(conversion_type, "Choose the unit to convert from")
+    to_unit = get_valid_unit(conversion_type, "Choose the unit to convert to")
 
-# Step 4: Display the result
-print(f"{value} {from_unit} is equal to {result} {to_unit}.")
+    # Step 3: Perform the conversion
+    if conversion_type == 'length':
+        result = convert_length(value, from_unit, to_unit)
+    elif conversion_type == 'weight':
+        result = convert_weight(value, from_unit, to_unit)
+    elif conversion_type == 'temperature':
+        result = convert_temperature(value, from_unit, to_unit)
+
+        # Step 4: Display the result
+    print(f"{value} {from_unit} is equal to {result} {to_unit}.")
